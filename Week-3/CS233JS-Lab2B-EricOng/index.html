@@ -17,106 +17,177 @@
 </head>
 
 <body>
-
     <div class="container text-center">
+        <h1>SHIP, CAPTAIN, CREW</h1>
 
 
-    <!-- PLAYER NAMES -->
-    <table class="table">
-        <!-- table head -->
-        <thead>
-            <tr>
-                <th scope="col">Player</th>
-                <th scope="col">Name</th>
-            </tr>
-        </thead>
-
-        <!-- table body -->
-        <tbody>
-            <tr>
-                <td>Player 1</td>
-                <td><input id="name1" placeholder="Enter name"></td>
-            </tr>
-            <tr>
-                <td>Player 1</td>
-                <td><input id="name2" placeholder="Enter name"></td>
-            </tr>
-        </tbody>
-    </table>
-
-
-    <!-- START BUTTON -->
-    <button id="start" class="btn btn-success">Start Game</button>
-    <br><br>
+        <!--* PLAYER NAMES -->
+        <table class="table">
+            <!-- table head -->
+            <thead>
+                <tr>
+                    <th scope="col">Player</th>
+                    <th scope="col">Name</th>
+                </tr>
+            </thead>
+    
+            <!--* table body -->
+            <tbody>
+                <tr>
+                    <td>Player 1</td>
+                    <td><input id="name1" placeholder="Enter name"></td>
+                </tr>
+                <tr>
+                    <td>Player 2</td>
+                    <td><input id="name2" placeholder="Enter name"></td></td>
+                </tr>
+            </tbody>
+        </table>
 
 
-    <!--ROUND & ROLL COUNTER -->
-    <h3>Round <span id="round">1</span></h3>
-    <h4>Next Roll: <span id="nextRoll"></span></h4>
-    <br>
+        <!--* START BUTTON -->
+        <button id="start" class="btn btn-success">Start Game</button>
+        <br><br>
 
 
-    <!-- DICE DISPLAY -->
-    <div>   <!-- there are 6 dice images. Each one displays a roll of 1 -->
-        <img id="die1" src="images/die1.png" alt="Die 1" width="100">
-        <img id="die1" src="images/die1.png" alt="Die 1" width="100">
-        <img id="die1" src="images/die1.png" alt="Die 1" width="100">
-        <img id="die1" src="images/die1.png" alt="Die 1" width="100">
-        <img id="die1" src="images/die1.png" alt="Die 1" width="100">
-        <img id="die1" src="images/die1.png" alt="Die 1" width="100">
+        <!--* ROUND & ROLL COUNTER -->
+        <h3>Round <span id="round">1</span></h3>
+        <h4>Current Turn: <span id="nextTurn"></span></h4>
+        <br>
+
     </div>
-    <br>
 
 
-    <!-- ROLL DICE BUTTON -->
-    <button id="roll" class="btn btn-success">Roll Dice</button>
-    <br><br>
+
+    <!--~---------------------------------- LEFT SIDE ------------------------------------>
+    <div style="width: 100%;">
+        <div style="float:left; width: 50%">
+            <div class=" text-center">
+            
+            
+                <!--* player name title -->
+                <h3 id="player1">Player 1</h3>
+                
+                <!--* DICE DISPLAY -->
+                <div>   <!-- there are 5 dice images. Each one displays a roll of 1 -->
+                    <img id="player1Die1" src="images/die1.png" alt="Player 1 Die 1" width="100">
+                    <img id="player1Die2" src="images/die1.png" alt="Player 1 Die 2" width="100">
+                    <img id="player1Die3" src="images/die1.png" alt="Player 1 Die 3" width="100">
+                    <img id="player1Die4" src="images/die1.png" alt="Player 1 Die 4" width="100">
+                    <img id="player1Die5" src="images/die1.png" alt="Player 1 Die 5" width="100">
+            
+                </div>
+                <br>
+            
+            
+                <!--* ROLL DICE BUTTON -->
+                <button id="roll1" class="btn btn-success">Roll Dice</button>
+                <br><br>
+            
+            
+                <!---* SCORES TABLE -->
+                <table class="table">
+
+                    <!--* table head -->
+                    <thead>
+                        <tr>
+                            <th scope="col">Ship</th>
+                            <th scope="col">Captain</th>
+                            <th scope="col">Crew</th>
+                            <th scope="col">Cargo</th>
+                            <th scope="col">Cargo</th>
+                        </tr>
+                        <tr>
+                            <th><img id="player1ShipImg" src="./images/greydie6.png" alt="Captain slot" width="50"></th>
+                            <th><img id="player1CaptainImg" src="./images/greydie5.png" alt="Ship slot" width="50"></th>
+                            <th><img id="player1CrewImg" src="./images/greydie4.png" alt="Crew slot" width="50"></th>
+                            <th><img id="player1Cargo1Img" src="./images/emptydie.png" alt="Cargo 1 slot" width="50"></th>
+                            <th><img id="player1Cargo2Img" src="./images/emptydie.png" alt="Cargo 2 slot" width="50"></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+            
+                    <!--* table body -->
+                    <tbody>
+                        
+                        <!--* score of cargo -->
+                        <tr>
+                            <td>Score: </td>
+                            <td id="ship2">0</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>  <!-- end of left float -->
+        </div>
 
 
-    <!--- SCORES TABLE -->
-    <table class="table">
-        <!-- table head -->
-        <thead>
-            <tr>
-                <th scope="col"></th> <!-- this moves the names over one column. It helps align everything-->
-                <th id="player1" scope="col">Player 1</th>
-                <th id="player2" scope="col">Player 2</th>
-            </tr>
-        </thead>
 
-        <!-- table body -->
-        <tbody>
-            <!-- rolls -->
-            <tr>
-                <td>Roll: </td>
-                <td id="rollScore1">0</td>
-                <td id="rollScore2">0</td>
-            </tr>
+        <!--~---------------------------------- RIGHT SIDE ------------------------------------>
+        <div style="float:right; width: 50%;">
 
-            <!-- rounds -->
-            <tr>
-                <td>Round: </td>
-                <td id="roundScore1">0</td>
-                <td id="roundScore2">0</td>
-            </tr>
+            <div class=" text-center">
+            
+                <!--* player name title -->
+                 <h3 id="player2">Player 2</h3>
+            
+                <!--* DICE DISPLAY -->
+                <div>   <!-- there are 5 dice images. Each one displays a roll of 1 -->
+                    <img id="player2Die1" src="images/die1.png" alt="Player 2 Die 1" width="100">
+                    <img id="player2Die2" src="images/die1.png" alt="Player 2 Die 2" width="100">
+                    <img id="player2Die3" src="images/die1.png" alt="Player 2 Die 3" width="100">
+                    <img id="player2Die4" src="images/die1.png" alt="Player 2 Die 4" width="100">
+                    <img id="player2Die5" src="images/die1.png" alt="Player 2 Die 5" width="100">
+            
+                </div>
+                <br>
+            
+            
+                <!--* ROLL DICE BUTTON -->
+                <button id="roll2" class="btn btn-success">Roll Dice</button>
+                <br><br>
+            
+            
+                <!---* SCORES TABLE -->
+                <table class="table">
 
-            <!-- games -->
-            <tr>
-                <td>Game:</td>
-                <td id="totalScore1">0</td>
-                <td id="totalScore2">0</td>
-            </tr>
+                    <!--* table head -->
+                    <thead>
+                        <tr>
+                            <th scope="col">Ship</th>
+                            <th scope="col">Captain</th>
+                            <th scope="col">Crew</th>
+                            <th scope="col">Cargo</th>
+                            <th scope="col">Cargo</th>
+                        </tr>
+                        <tr>
+                            <th><img id="player2ShipImg" src="./images/greydie6.png" alt="Captain slot" width="50"></th>
+                            <th><img id="player2CaptainImg" src="./images/greydie5.png" alt="Ship slot" width="50"></th>
+                            <th><img id="player2CrewImg" src="./images/greydie4.png" alt="Crew slot" width="50"></th>
+                            <th><img id="player2Cargo1Img" src="./images/emptydie.png" alt="Cargo 1 slot" width="50"></th>
+                            <th><img id="player2Cargo2Img" src="./images/emptydie.png" alt="Cargo 2 slot" width="50"></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+            
+                    <!--* table body -->
+                    <tbody>
+                        
+                        <!--* score of cargo -->
+                        <tr>
+                            <td>Score: </td>
+                            <td id="ship2">0</td>
+                        </tr>
 
-            <!-- rounds won -->
-            <tr>
-                <td>Rounds Won:</td>
-                <td id="roundsWon1">0</td>
-                <td id="roundsWon2">0</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-
+                    </tbody>
+                </table>
+                
+            </div>
+            
+        </div> <!-- end of right float -->
+     </div>
+     <div style="clear:both"></div>
 
 
     <!-- bootstrap stuff -->

@@ -24,7 +24,7 @@ class Game {
         this.#dice.push(new Die());
     }
 
-    // These getters are only used ouside the class
+    // These getters are only used outside the class
     get dice() { return this.#dice; }
     get round() { return this.#round; }
 
@@ -34,7 +34,7 @@ class Game {
     }
 
     // Add a player to the game. 
-    // Pass in the palyer's name as a string
+    // Pass in the player's name as a string
     addPlayer(name) {
         if (name === "") {  // if name is an empty string, use a default name
             name = "Player " + (this.#players.length + 1);
@@ -91,7 +91,7 @@ class Game {
                 this.#currentPlayerIndex = 0;
             }
         }
-        // rturn an object containing all the scores
+        // return an object containing all the scores
         return scores
     }
 
@@ -99,7 +99,7 @@ class Game {
     getGameWinner() {
         let winner = this.#players[0];
         // check for ties
-        // fist, find the mody rounds won by any player
+        // first, find the max rounds won by any player
         let maxRoundsWon = Math.max(...this.#players.map(p => p.roundsWon));
         // Get an array of players who have won the most rounds
         let roundWinners = this.#players.filter(p => p.roundsWon === maxRoundsWon); if (roundWinners.length === 1) {

@@ -40,7 +40,7 @@ class Player
         }
     }
 
-    // Calculate the socre for this round and add it to the player's total score
+    // Calculate the score for this round and add it to the player's total score
     calculateScore(dice, round)
     {
         let rollScore = 0;
